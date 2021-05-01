@@ -3,14 +3,15 @@ from DoublyLinkedList import DoublyLinkedList
 from os import system
 import copy 
 
-listLinked=DoublyLinkedList(3)
+listLinked=DoublyLinkedList(5)
 
 option=1
 while option!='0':
   system("clear")
   print('1. Insert End')
   print('2. Delete First')
-  print('3. Show List')
+  print('3. Get')
+  print('4. Show List')
   print('0. Exit')
   option=input("Enter the option: ")
   if option=='1':
@@ -19,6 +20,10 @@ while option!='0':
   elif option=='2':
     listLinked.deleteFist()
   elif option=='3':
+    value=int(input('Enter the value: '))
+    print(listLinked.getItem(value))
+    input("Press the <ENTER> key to continue...")
+  elif option=='4':
     listLinked.showList()
     input("Press the <ENTER> key to continue...")
 

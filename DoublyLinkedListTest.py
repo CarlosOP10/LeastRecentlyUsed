@@ -64,5 +64,34 @@ class TestDoublyLinkedListMethods(unittest.TestCase):
     linkedList=DoublyLinkedList(2)
     self.assertEqual(linkedList.deleteFist(),'')
 
+  def testGetItemLinkedList(self):
+    linkendList=DoublyLinkedList(3)
+    linkendList.insertEnd(1)
+    linkendList.insertEnd(2)
+    linkendList.insertEnd(3)
+    self.assertEqual(linkendList.getItem(2),2)
+
+  def testGetItemNotExistLinkedList(self):
+    linkendList=DoublyLinkedList(3)
+    linkendList.insertEnd(5)
+    linkendList.insertEnd(6)
+    linkendList.insertEnd(1)
+    self.assertNotEqual(linkendList.getItem(2),2)
+
+  def testGetItemInList(self):
+    linkendList=DoublyLinkedList(3)
+    linkendList.insertEnd(5)
+    linkendList.insertEnd(6)
+    linkendList.insertEnd(1)
+    linkendList.getItem(6)
+    self.assertEquals(linkendList.getItems(),[5,1,6])
+  def testGetFistItemInList(self):
+    linkendList=DoublyLinkedList(3)
+    linkendList.insertEnd(5)
+    linkendList.insertEnd(6)
+    linkendList.insertEnd(1)
+    linkendList.getItem(5)
+    self.assertEquals(linkendList.getItems(),[6,1,5])
+    
 if __name__ == '__main__':
   unittest.main()
